@@ -26,7 +26,6 @@ while (true)
         arr1[i] = line;
         i++;
     }
-
 }
 string [] arr2 = new string[10000];
 int j = 0;
