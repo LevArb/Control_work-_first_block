@@ -6,17 +6,18 @@ Console.WriteLine("Я - программа, создающая массив из
 Console.WriteLine("и создающая из них новый массив из строк не более 3-х символов!");
 Console.WriteLine("Вводите строки вашего массива по очереди через 'Enter'");
 Console.WriteLine("Введите слово 'quit' для завершения работы и вывода результата");
-
+Console.WriteLine("");
 string [] arr1 = new string[10000];
 int check = 0;
+int i = 0;
 while (true)
 {
     string line = Console.ReadLine();
-    int i = 0;
     if (line == "quit")
     {
         Console.WriteLine(string.Empty);
         Console.WriteLine("Спасибо! Ваш новый массив готов!");
+        Console.WriteLine("");
         check = 1;
         break;
     }
@@ -27,8 +28,28 @@ while (true)
     }
 
 }
-
-if (check == 1)
+string [] arr2 = new string[10000];
+int j = 0;
+try
 {
-    Console.WriteLine("suck dick!!");
+    if (check == 1)
+    {
+        while (j < arr1.Length)
+        {
+            if (arr1[j].Length <= 3)
+            {
+                arr2[j] = arr1[j];
+                Console.Write(arr2[j] + " ");
+                j++;
+            }
+            else
+            {
+                j++;
+            }
+        }
+    }
+}
+catch (System.NullReferenceException)
+{
+    Console.Write("");
 }
